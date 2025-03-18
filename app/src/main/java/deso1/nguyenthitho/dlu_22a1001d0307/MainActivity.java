@@ -3,7 +3,6 @@ package deso1.nguyenthitho.dlu_22a1001d0307;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -11,11 +10,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
 import java.util.List;
-
 import deso1.nguyenthitho.dlu_22a1001d0307.adapter.FoodAdapter;
 import deso1.nguyenthitho.dlu_22a1001d0307.helper.DatabaseHelper;
 import deso1.nguyenthitho.dlu_22a1001d0307.model.Food;
@@ -44,14 +40,12 @@ public class MainActivity extends AppCompatActivity {
         fabAddFood = findViewById(R.id.fabAddFood);
         databaseHelper = new DatabaseHelper(this);
 
-        // Thêm dữ liệu mẫu vào SQLite nếu chưa có
         if (databaseHelper.getAllFoods().isEmpty()) {
             databaseHelper.addFood("Gỏi gà", 120000, "VND", R.drawable.goi_ga);
             databaseHelper.addFood("Bò lúc lắc", 150000, "VND", R.drawable.bo_luc_lac);
             databaseHelper.addFood("Tôm hấp", 100000, "VND", R.drawable.tom_hap);
         }
 
-        // Lấy danh sách món ăn từ SQLite
         foodList = databaseHelper.getAllFoods();
         foodAdapter = new FoodAdapter(this, foodList);
 

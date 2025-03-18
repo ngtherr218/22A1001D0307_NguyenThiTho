@@ -1,26 +1,10 @@
 package deso1.nguyenthitho.dlu_22a1001d0307;
-
-import android.content.ContentValues;
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
-import android.util.Base64;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.Toast;
-
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-
 import deso1.nguyenthitho.dlu_22a1001d0307.helper.DatabaseHelper;
 
 public class AddFoodActivity extends AppCompatActivity {

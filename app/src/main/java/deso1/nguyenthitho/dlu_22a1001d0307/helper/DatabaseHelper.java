@@ -4,11 +4,8 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-
 import java.util.ArrayList;
 import java.util.List;
-
-import deso1.nguyenthitho.dlu_22a1001d0307.R;
 import deso1.nguyenthitho.dlu_22a1001d0307.model.Food;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
@@ -43,7 +40,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    // Thêm món ăn mới
     public boolean addFood(String name, double price, String unit, int image) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -55,11 +51,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         long result = db.insert(TABLE_NAME, null, values);
         db.close();
 
-        return result != -1; // Trả về true nếu thêm thành công, false nếu thất bại
+        return result != -1;
     }
 
 
-    // Lấy danh sách món ăn
     public List<Food> getAllFoods() {
         List<Food> foodList = new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();
@@ -98,8 +93,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 String name = cursor.getString(cursor.getColumnIndexOrThrow("name"));
                 double price = cursor.getDouble(cursor.getColumnIndexOrThrow("price"));
                 String unit = cursor.getString(cursor.getColumnIndexOrThrow("unit"));
-                int image = cursor.getInt(cursor.getColumnIndexOrThrow("image")); // Nếu lưu đường dẫn ảnh
-
+                int image = cursor.getInt(cursor.getColumnIndexOrThrow("image"));
                 food = new Food(foodId, name, price, unit, image);
             }
         } catch (Exception e) {

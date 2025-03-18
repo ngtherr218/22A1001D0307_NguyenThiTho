@@ -1,5 +1,4 @@
 package deso1.nguyenthitho.dlu_22a1001d0307;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -7,9 +6,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import deso1.nguyenthitho.dlu_22a1001d0307.helper.DatabaseHelper;
 import deso1.nguyenthitho.dlu_22a1001d0307.model.Food;
 
@@ -35,7 +32,6 @@ public class EditFoodActivity extends AppCompatActivity {
 
         databaseHelper = new DatabaseHelper(this);
 
-        // Nhận ID món ăn từ Intent
         foodId = getIntent().getIntExtra("food_id", -1);
         Food food = databaseHelper.getFoodById(foodId);
         if (food != null) {
